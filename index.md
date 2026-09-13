@@ -104,3 +104,10 @@ author_profile: true
 </div>
 
 > 本个人网站用于计算传播学导论课程作业展示。欢迎通过侧栏中的邮箱与我联系。
+
+
+<style>
+.home-modules .module-card { background: linear-gradient(145deg, #ffffff 0%, #f5f5f7 100%); border-color: rgba(0, 0, 0, .06); box-shadow: 0 1px 1px rgba(0, 0, 0, .03), 0 10px 24px rgba(0, 0, 0, .08), inset 0 1px 0 rgba(255, 255, 255, .9); }
+.home-modules .module-card--education, .home-modules .module-card--project { background: #fff; }
+.home-modules .module-card:hover { box-shadow: 0 2px 3px rgba(0, 0, 0, .04), 0 16px 32px rgba(0, 0, 0, .12), inset 0 1px 0 rgba(255, 255, 255, .9); transform: translateY(-3px); }
+</style>
