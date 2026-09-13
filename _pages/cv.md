@@ -1,64 +1,50 @@
 ---
-layout: archive
-title: "CV"
+layout: single
+title: "个人简历"
 permalink: /cv/
 author_profile: true
-redirect_from:
-  - /resume
 ---
 
-{% include base_path %}
+## 基本信息
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+- **姓名：** 徐昕哲
+- **身份：** 南京大学新闻传播学院硕士研究生
+- **研究方向：** 数字营销传播
+- **邮箱：** Lemcous@163.com
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## 教育经历
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+**南京大学新闻传播学院**  
+新闻与传播硕士研究生｜20XX—至今（请替换为实际年份）
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+**本科院校与专业（示例）**  
+20XX—20XX（请填写或删除）
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## 研究兴趣
+
+数字营销与品牌传播、社交媒体传播、平台与用户互动、消费者洞察、内容策略。
+
+## 项目经历
+
+### 社交媒体品牌传播分析（示例）
+
+围绕某品牌的社交媒体内容进行整理与分析，形成传播策略观察和优化建议。
+
+### 数字平台用户洞察（示例）
+
+通过公开资料、问卷或访谈，了解目标用户的内容偏好与消费决策过程。
+
+## 技能
+
+- 文献检索与学术写作
+- 问卷设计、访谈与内容分析
+- Excel / PPT 等基础数据整理与汇报工具
+- 社交媒体内容策划与平台观察
+
+## 奖项与证书
+
+- 待补充（如奖学金、竞赛、英语或软件证书）
+
+---
+
+*这是一份用于个人主页展示的简历模板。请在提交作业前，将所有“示例”“待补充”和年份替换为真实信息。*
