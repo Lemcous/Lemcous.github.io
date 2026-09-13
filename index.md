@@ -31,13 +31,6 @@ author_profile: true
 }
 </style>
 
-<div class="notice--primary" markdown="1">
-
-**徐昕哲**｜南京大学新闻传播学院新闻与传播硕士研究生  
-研究方向：**数字营销传播**
-
-</div>
-
 我关注数字平台如何影响品牌与消费者之间的沟通，也希望通过研究与实践理解数据、内容和创意如何共同推动有效的营销传播。
 
 [研究与项目](/portfolio/){: .btn .btn--primary }
