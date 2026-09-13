@@ -7,6 +7,9 @@
 # server process.
 
 
+
+
+
 # Basic Site Settings
 locale                   : "zh-CN"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
@@ -18,6 +21,12 @@ url                      : https://Lemcous.github.io # The base hostname & proto
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Lemcous/Lemcous.github.io"
+
+# Publish standalone pages stored in the _pages directory
+include:
+  - _pages
+
+
 
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -33,6 +42,8 @@ author:
   employer         : "南京大学新闻传播学院"
   uri              : # URL
   email            : "Lemcous@163.com" 
+
+
 
 
   # Academic websites
