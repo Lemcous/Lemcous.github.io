@@ -38,7 +38,7 @@ author_profile: true
 
 <div class="home-modules">
 
-## 研究兴趣
+<h2>研究兴趣</h2>
 
 <div class="module-grid">
   <article class="module-card">
@@ -63,7 +63,7 @@ author_profile: true
   </article>
 </div>
 
-## 教育经历
+<h2>教育经历</h2>
 
 <div class="module-grid">
   <article class="module-card module-card--education">
@@ -78,7 +78,7 @@ author_profile: true
   </article>
 </div>
 
-## 课程与研究项目
+<h2>课程与研究项目</h2>
 
 <div class="module-grid">
   <article class="module-card module-card--project">
@@ -95,7 +95,7 @@ author_profile: true
   </article>
 </div>
 
-## 当前目标
+<h2>当前目标</h2>
 
 <div class="module-focus">
   正在系统学习数字营销传播相关理论与方法，并持续积累研究设计、内容分析和数据分析方面的实践经验。
