@@ -113,6 +113,13 @@ body {
   letter-spacing: -0.04em;
 }
 
+/* Keep the homepage title elegant rather than oversized. */
+.page__title {
+  font-size: clamp(1.85rem, 3vw, 2.55rem);
+  margin-bottom: 1.2rem;
+}
+
+
 .author__bio,
 .author__urls {
   color: var(--muted);
