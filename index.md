@@ -90,7 +90,7 @@ author_profile: false
 </style>
 
 <div class="xz-home">
-  <nav class="xz-nav"><div class="xz-nav__brand"><span class="xz-dot">XZ</span> XINZHE / PORTFOLIO</div><div class="xz-nav__links"><a href="#about">关于我</a><a href="/cv/">个人简历</a><a href="/works/">作品集</a></div></nav>
+  <nav class="xz-nav" aria-label="主导航"><div class="xz-nav__links"><a href="#about">关于我</a><a href="/cv/">个人简历</a><a href="/works/">作品集</a></div></nav>
 
   <section class="xz-section xz-hero" id="about"><div class="xz-inner xz-hero__grid xz-reveal">
     <div><p class="xz-eyebrow">HELLO / 你好</p><h1 class="xz-title">Hi,<br>我是徐昕哲</h1><p class="xz-role">Digital Marketing / 内容传播</p><p class="xz-copy">南京大学新闻与传播学院新闻与传播硕士研究生。关注数字平台、内容策略与品牌沟通，希望用研究与实践理解内容如何真正影响用户。</p><div class="xz-pills"><span class="xz-pill">品牌传播</span><span class="xz-pill">用户洞察</span><span class="xz-pill">内容策略</span></div><a class="xz-button" href="/cv/">了解我的经历</a></div>
@@ -195,3 +195,8 @@ author_profile: false
   paint();
 })();
 </script>
+
+<style>
+.xz-nav { justify-content:flex-start; max-width:70rem; padding:.43rem .55rem; }
+.xz-nav__links { justify-content:flex-start; }
+</style>
