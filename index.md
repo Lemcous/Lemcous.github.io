@@ -5,346 +5,311 @@ author_profile: true
 ---
 
 <style>
+.page__title { display: none; }
+
 .about-vibe {
-  --av-ink: #172033;
-  --av-muted: #61708a;
-  --av-blue: #3d6df2;
-  --av-sky: #eaf1ff;
-  --av-line: #dbe4f5;
-  color: var(--av-ink);
+  --ink: #1d1d1f;
+  --peach: #f4d9ca;
+  --lavender: #c9c4ed;
+  --violet: #6156ad;
+  --paper: rgba(255, 253, 249, .82);
+  color: var(--ink);
   font-size: 16px;
+  margin-top: -.3rem;
 }
 
 .about-vibe p { max-width: none; }
 
-.about-vibe .av-hero {
-  background: linear-gradient(135deg, #e8f0ff 0%, #f7faff 48%, #e7fbf7 100%);
-  border: 1px solid #d9e6ff;
-  border-radius: 24px;
+.av-shell {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(255,255,255,.52) 0 1px, transparent 2px),
+    radial-gradient(circle at 16% 77%, rgba(255,255,255,.42) 0 1px, transparent 2px),
+    linear-gradient(135deg, #f6e0d2 0%, var(--peach) 52%, #efd0c2 100%);
+  border-radius: 28px;
   overflow: hidden;
-  padding: clamp(1.5rem, 4vw, 3.1rem);
+  padding: clamp(1rem, 2.8vw, 2rem);
   position: relative;
 }
 
-.about-vibe .av-hero::after {
-  background: rgba(61, 109, 242, .1);
+.av-shell::before,
+.av-shell::after {
+  border: 1px solid rgba(255,255,255,.5);
   border-radius: 50%;
   content: "";
-  height: 13rem;
+  pointer-events: none;
   position: absolute;
-  right: -4rem;
-  top: -5rem;
-  width: 13rem;
 }
 
-.about-vibe .av-eyebrow,
-.about-vibe .av-label {
-  color: var(--av-blue);
+.av-shell::before { height: 3rem; right: 13%; top: 21%; width: 3rem; }
+.av-shell::after { bottom: 9%; height: 1.5rem; left: 52%; width: 1.5rem; }
+
+.av-nav {
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,.70);
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 999px;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 52rem;
+  padding: .5rem .65rem .5rem 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.av-brand {
+  align-items: center;
+  display: flex;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: .12em;
-  margin: 0 0 .7rem;
-  text-transform: uppercase;
-}
-
-.about-vibe .av-name {
-  font-size: clamp(2.3rem, 6vw, 4.4rem);
-  font-weight: 800;
-  letter-spacing: -.075em;
-  line-height: 1;
-  margin: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.about-vibe .av-tagline {
-  color: #34415a;
-  font-size: clamp(1rem, 2vw, 1.22rem);
-  line-height: 1.75;
-  margin: 1rem 0 0;
-  max-width: 34rem;
-  position: relative;
-  z-index: 1;
-}
-
-.about-vibe .av-status {
-  align-items: center;
-  background: rgba(255,255,255,.7);
-  border: 1px solid rgba(255,255,255,.9);
-  border-radius: 999px;
-  color: #43516c;
-  display: inline-flex;
-  font-size: 14px;
   gap: .5rem;
-  margin-top: 1.35rem;
-  padding: .48rem .85rem;
-  position: relative;
-  z-index: 1;
+  letter-spacing: .06em;
 }
 
-.about-vibe .av-dot {
-  background: #1aa77a;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(26,167,122,.12);
-  height: .5rem;
-  width: .5rem;
-}
-
-.about-vibe .av-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .65rem;
-  margin-top: 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.about-vibe .av-button {
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 700;
-  padding: .62rem 1rem;
-  text-decoration: none;
-}
-
-.about-vibe .av-button--primary {
-  background: var(--av-ink);
-  color: #fff;
-}
-
-.about-vibe .av-button--secondary {
-  background: rgba(255,255,255,.66);
-  border: 1px solid #d1ddf5;
-  color: var(--av-ink);
-}
-
-.about-vibe .av-section {
-  margin-top: 2.25rem;
-}
-
-.about-vibe .av-section__head {
-  align-items: baseline;
-  display: flex;
-  gap: .75rem;
-  justify-content: space-between;
-  margin-bottom: .85rem;
-}
-
-.about-vibe .av-section__title {
-  border: 0;
-  font-size: 21px;
-  letter-spacing: -.035em;
-  margin: 0;
-  padding: 0;
-}
-
-.about-vibe .av-section__note {
-  color: var(--av-muted);
-  font-size: 13px;
-  margin: 0;
-}
-
-.about-vibe .av-grid {
-  display: grid;
-  gap: .85rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.about-vibe .av-card {
-  background: #fff;
-  border: 1px solid var(--av-line);
-  border-radius: 16px;
-  min-height: 11rem;
-  padding: 1.1rem;
-}
-
-.about-vibe .av-card--feature {
-  background: var(--av-ink);
-  border-color: var(--av-ink);
-  color: #fff;
-}
-
-.about-vibe .av-card--feature .av-label,
-.about-vibe .av-card--feature .av-card__text {
-  color: rgba(255,255,255,.7);
-}
-
-.about-vibe .av-card__title {
-  font-size: 17px;
-  letter-spacing: -.025em;
-  line-height: 1.35;
-  margin: 0 0 .6rem;
-}
-
-.about-vibe .av-card__text {
-  color: var(--av-muted);
-  font-size: 14px;
-  line-height: 1.65;
-  margin: 0;
-}
-
-.about-vibe .av-timeline {
-  display: grid;
-  gap: .7rem;
-}
-
-.about-vibe .av-timeline__item {
+.av-brand__mark {
   align-items: center;
-  border-bottom: 1px solid var(--av-line);
+  background: var(--ink);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  font-size: 9px;
+  height: 1.35rem;
+  justify-content: center;
+  width: 1.35rem;
+}
+
+.av-nav__links { display: flex; gap: .1rem; }
+.av-nav__links a {
+  border-radius: 999px;
+  color: #524b51;
+  font-size: 12px;
+  padding: .43rem .7rem;
+  text-decoration: none;
+  transition: background-color .25s ease, color .25s ease;
+}
+.av-nav__links a:hover { background: rgba(255,255,255,.85); color: var(--ink); }
+
+.av-hero {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.4rem, 4vw, 3.6rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(15rem, .95fr);
+  min-height: 35rem;
+  padding: clamp(2rem, 5vw, 5.4rem) clamp(.4rem, 2vw, 2rem) 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.av-copy { padding-left: clamp(0rem, 2vw, 1.2rem); }
+
+.av-eyebrow {
+  align-items: center;
+  color: #655d61;
+  display: flex;
+  font-size: 11px;
+  font-weight: 800;
+  gap: .35rem;
+  letter-spacing: .1em;
+  margin: 0 0 1rem;
+}
+.av-eyebrow::before { background: #66b696; border-radius: 50%; content: ""; height: .42rem; width: .42rem; }
+
+.av-name {
+  font-size: clamp(3.1rem, 6.8vw, 6rem);
+  font-weight: 850;
+  letter-spacing: -.1em;
+  line-height: .92;
+  margin: 0;
+}
+.av-name span { display: block; }
+
+.av-role {
+  color: var(--violet);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  margin: 1rem 0 1.1rem;
+}
+
+.av-intro {
+  color: #514a50;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 29rem;
+}
+
+.av-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+.av-chip {
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 999px;
+  color: #4d464c;
+  font-size: 12px;
+  padding: .38rem .7rem;
+}
+
+.av-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.35rem; }
+.av-button {
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 750;
+  padding: .67rem 1rem;
+  text-decoration: none;
+  transition: transform .26s cubic-bezier(.22,1,.36,1), box-shadow .26s ease;
+}
+.av-button:hover { transform: translateY(-3px) rotate(-1deg); }
+.av-button--dark { background: var(--ink); box-shadow: 0 8px 16px rgba(28,22,25,.16); color: #fff; }
+.av-button--paper { background: var(--paper); border: 1px solid rgba(255,255,255,.9); color: var(--ink); }
+
+.av-portrait-zone { min-height: 27rem; position: relative; }
+.av-portrait-backdrop {
+  background: linear-gradient(145deg, #9e95dc, #776ebf);
+  border-radius: 44% 56% 43% 57% / 43% 47% 53% 57%;
+  height: min(27rem, 47vw);
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  width: min(20rem, 82%);
+}
+.av-portrait-backdrop::after {
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  content: "";
+  height: 3.5rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 2rem;
+  width: 3.5rem;
+}
+.av-portrait {
+  bottom: 0;
+  filter: drop-shadow(0 16px 18px rgba(39,31,81,.25));
+  height: 92%;
+  left: 50%;
+  object-fit: cover;
+  object-position: center top;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 82%;
+}
+.av-note {
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(255,255,255,.95);
+  border-radius: 14px;
+  bottom: 1.2rem;
+  box-shadow: 0 10px 20px rgba(65,49,54,.1);
+  color: #4e4650;
+  font-size: 12px;
+  line-height: 1.45;
+  padding: .65rem .75rem;
+  position: absolute;
+  right: -.15rem;
+  transform: rotate(4deg);
+  width: 9.8rem;
+}
+.av-note strong { color: var(--ink); display: block; font-size: 11px; margin-bottom: .2rem; }
+
+.av-strip {
   display: grid;
   gap: .75rem;
-  grid-template-columns: 6rem minmax(0, 1fr);
-  padding: .75rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: .6rem;
+  position: relative;
+  z-index: 1;
 }
-
-.about-vibe .av-timeline__date {
-  color: var(--av-blue);
-  font-size: 13px;
-  font-weight: 700;
+.av-strip__item {
+  background: rgba(255,255,255,.48);
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 15px;
+  min-height: 5.8rem;
+  padding: .85rem;
+  transition: transform .3s cubic-bezier(.22,1,.36,1), background-color .3s ease;
 }
+.av-strip__item:hover { background: rgba(255,255,255,.72); transform: translateY(-5px); }
+.av-strip__label { color: #6c6268; font-size: 11px; font-weight: 800; letter-spacing: .08em; margin: 0 0 .45rem; }
+.av-strip__value { font-size: 14px; font-weight: 750; line-height: 1.45; margin: 0; }
 
-.about-vibe .av-timeline__main {
-  font-size: 15px;
-  line-height: 1.5;
+.av-shell.is-visible .av-nav { animation: av-up .65s cubic-bezier(.22,1,.36,1) both; }
+.av-shell.is-visible .av-copy { animation: av-up .8s .08s cubic-bezier(.22,1,.36,1) both; }
+.av-shell.is-visible .av-portrait-zone { animation: av-pop .8s .18s cubic-bezier(.22,1,.36,1) both; }
+.av-shell.is-visible .av-strip { animation: av-up .75s .26s cubic-bezier(.22,1,.36,1) both; }
+@keyframes av-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes av-pop { from { opacity: 0; transform: scale(.94) rotate(2deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+
+@media (max-width: 48em) {
+  .av-nav__links a:not(:last-child) { display: none; }
+  .av-hero { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; }
+  .av-portrait-zone { min-height: 22rem; }
+  .av-portrait-backdrop { height: 21rem; width: 16rem; }
+  .av-name { font-size: clamp(3.1rem, 16vw, 4.8rem); }
 }
-
-.about-vibe .av-timeline__main span {
-  color: var(--av-muted);
-  font-size: 14px;
+@media (max-width: 32em) {
+  .av-shell { border-radius: 20px; padding: .75rem; }
+  .av-strip { grid-template-columns: 1fr; }
+  .av-nav { padding-left: .75rem; }
 }
-
-@media (max-width: 40em) {
-  .about-vibe .av-grid { grid-template-columns: 1fr; }
-  .about-vibe .av-card { min-height: auto; }
-  .about-vibe .av-section__head { align-items: flex-start; flex-direction: column; gap: .3rem; }
-  .about-vibe .av-timeline__item { grid-template-columns: 1fr; gap: .2rem; }
-}
-
-.about-vibe .av-hero,
-.about-vibe .av-section {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1);
-}
-
-.about-vibe .av-hero.is-visible,
-.about-vibe .av-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.about-vibe .av-section:nth-of-type(2) { transition-delay: .08s; }
-.about-vibe .av-section:nth-of-type(3) { transition-delay: .14s; }
-
-.about-vibe .av-card,
-.about-vibe .av-button,
-.about-vibe .av-timeline__item {
-  transition: transform .28s cubic-bezier(.22, 1, .36, 1), box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
-}
-
-.about-vibe .av-card:hover {
-  border-color: #b7c9ee;
-  box-shadow: 0 14px 28px rgba(52, 79, 135, .11);
-  transform: translateY(-4px);
-}
-
-.about-vibe .av-button:hover {
-  transform: translateY(-2px);
-}
-
-.about-vibe .av-timeline__item:hover {
-  border-color: #b7c9ee;
-  transform: translateX(4px);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .about-vibe .av-hero,
-  .about-vibe .av-section,
-  .about-vibe .av-card,
-  .about-vibe .av-button,
-  .about-vibe .av-timeline__item {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+  .av-shell *, .av-shell *::before, .av-shell *::after { animation: none !important; transition: none !important; }
 }
 </style>
 
 <div class="about-vibe">
-
-  <section class="av-hero">
-    <p class="av-eyebrow">Hello, I am</p>
-    <h2 class="av-name">徐昕哲</h2>
-    <p class="av-tagline">南京大学新闻传播学院新闻与传播硕士研究生。关注数字平台、内容策略与品牌如何建立更有效的沟通。</p>
-    <div class="av-status"><span class="av-dot"></span>目前在南京 · 持续积累研究与传播实践</div>
-    <div class="av-actions">
-      <a class="av-button av-button--primary" href="/cv/">查看个人简历</a>
-      <a class="av-button av-button--secondary" href="/works/">浏览个人作品集</a>
-    </div>
-  </section>
-
-  <section class="av-section">
-    <div class="av-section__head">
-      <h2 class="av-section__title">我关心什么</h2>
-      <p class="av-section__note">Focus areas</p>
-    </div>
-    <div class="av-grid">
-      <article class="av-card av-card--feature">
-        <p class="av-label">01 / Brand</p>
-        <h3 class="av-card__title">数字营销与品牌传播</h3>
-        <p class="av-card__text">从传播目标、内容表达与用户反馈，理解品牌在数字环境中的沟通方式。</p>
-      </article>
-      <article class="av-card">
-        <p class="av-label">02 / Platform</p>
-        <h3 class="av-card__title">社交媒体与平台传播</h3>
-        <p class="av-card__text">关注平台机制、内容形态与互动行为之间的关系。</p>
-      </article>
-      <article class="av-card">
-        <p class="av-label">03 / Audience</p>
-        <h3 class="av-card__title">消费者洞察</h3>
-        <p class="av-card__text">理解用户需求、使用场景与消费决策如何被内容影响。</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="av-section">
-    <div class="av-section__head">
-      <h2 class="av-section__title">现在在做什么</h2>
-      <p class="av-section__note">Now</p>
-    </div>
-    <div class="av-timeline">
-      <div class="av-timeline__item">
-        <div class="av-timeline__date">2026 — 至今</div>
-        <div class="av-timeline__main">南京大学新闻传播学院 <span>· 新闻与传播硕士研究生，数字营销传播方向</span></div>
+  <div class="av-shell">
+    <nav class="av-nav">
+      <div class="av-brand"><span class="av-brand__mark">XZ</span> XINZHE / PORTFOLIO</div>
+      <div class="av-nav__links">
+        <a href="/cv/">个人简历</a>
+        <a href="/works/">个人作品集</a>
       </div>
-      <div class="av-timeline__item">
-        <div class="av-timeline__date">研究训练</div>
-        <div class="av-timeline__main">用户研究与内容分析 <span>· 问卷、访谈、SPSS 数据处理与研究汇报</span></div>
-      </div>
-      <div class="av-timeline__item">
-        <div class="av-timeline__date">实践积累</div>
-        <div class="av-timeline__main">传播与运营 <span>· 内容策划、项目协作、活动影像记录</span></div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
+    <section class="av-hero">
+      <div class="av-copy">
+        <p class="av-eyebrow">HELLO / 你好</p>
+        <h1 class="av-name"><span>Hi,</span><span>我是徐昕哲</span></h1>
+        <p class="av-role">Digital Marketing / 内容传播</p>
+        <p class="av-intro">南京大学新闻传播学院新闻与传播硕士研究生。关注数字平台、内容策略与品牌沟通，希望用研究与实践理解内容如何真正影响用户。</p>
+        <div class="av-chips">
+          <span class="av-chip">品牌传播</span>
+          <span class="av-chip">用户洞察</span>
+          <span class="av-chip">内容策略</span>
+        </div>
+        <div class="av-actions">
+          <a class="av-button av-button--dark" href="/cv/">了解我的经历</a>
+          <a class="av-button av-button--paper" href="/works/">查看作品集</a>
+        </div>
+      </div>
+
+      <div class="av-portrait-zone">
+        <div class="av-portrait-backdrop">
+          <img class="av-portrait" src="/images/IMG_8580.JPG" alt="徐昕哲">
+        </div>
+        <div class="av-note"><strong>CURRENTLY</strong>在南京学习数字营销传播，也在慢慢搭建自己的作品集。</div>
+      </div>
+    </section>
+
+    <section class="av-strip">
+      <article class="av-strip__item">
+        <p class="av-strip__label">NOW STUDYING</p>
+        <p class="av-strip__value">新闻与传播<br>数字营销传播方向</p>
+      </article>
+      <article class="av-strip__item">
+        <p class="av-strip__label">INTERESTED IN</p>
+        <p class="av-strip__value">社交媒体 · 用户研究<br>品牌内容策略</p>
+      </article>
+      <article class="av-strip__item">
+        <p class="av-strip__label">BASED IN</p>
+        <p class="av-strip__value">南京，中国<br>欢迎通过邮箱联系</p>
+      </article>
+    </section>
+  </div>
 </div>
 
 <script>
-(function () {
-  var items = document.querySelectorAll('.about-vibe .av-hero, .about-vibe .av-section');
-  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    items.forEach(function (item) { item.classList.add('is-visible'); });
-    return;
-  }
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  items.forEach(function (item) { observer.observe(item); });
-}());
+document.querySelector('.av-shell')?.classList.add('is-visible');
 </script>
