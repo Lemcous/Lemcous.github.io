@@ -87,7 +87,7 @@ author_profile: true
       </article>
       <article class="cv-experience">
         <div class="cv-experience__top">
-          <h3 class="cv-experience__role">活动专摄｜南京师范大学传媒中心映像团</h3>
+          <h3 class="cv-experience__role">活动专摄｜南京师范大学传媒中心助理团</h3>
           <span class="cv-experience__date">2023.02—2024.01</span>
         </div>
         <p class="cv-experience__desc">承担校园活动导摄及现场配合，熟悉活动影像制作流程与多岗位协作。</p>
