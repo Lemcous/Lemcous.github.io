@@ -143,8 +143,8 @@ body {
 }
 
 .page__content {
-  font-size: 1.06rem;
-  line-height: 1.85;
+  font-size: 0.98rem;
+  line-height: 1.72;
 }
 
 .page__content p {
@@ -682,5 +682,222 @@ body {
   .pf .pf-cta {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+
+/* ===========================================================================
+   Compact CV page
+   =========================================================================== */
+.page__title {
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.15;
+  margin-bottom: 1.15rem;
+}
+
+.page__content {
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.cv-resume {
+  --cv-ink: #202124;
+  --cv-muted: #6b7280;
+  --cv-line: #e5e7eb;
+  --cv-surface: #f8fafc;
+  --cv-accent: #0f6cbd;
+  color: var(--cv-ink);
+}
+
+.cv-resume p {
+  max-width: none;
+}
+
+.cv-resume .cv-hero {
+  background: linear-gradient(135deg, #f0f7ff, #f8fbff);
+  border: 1px solid #dbeafe;
+  border-left: 3px solid var(--cv-accent);
+  border-radius: 14px;
+  margin: 0 0 1.8rem;
+  padding: 1.05rem 1.25rem;
+}
+
+.cv-resume .cv-hero__name {
+  color: var(--cv-ink);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+}
+
+.cv-resume .cv-hero__meta {
+  color: var(--cv-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.cv-resume .cv-hero__meta + .cv-hero__meta {
+  margin-top: 0.15rem;
+}
+
+.cv-resume .cv-section {
+  border-top: 1px solid var(--cv-line);
+  margin-top: 1.85rem;
+  padding-top: 1.25rem;
+}
+
+.cv-resume .cv-section__title {
+  border: 0;
+  color: var(--cv-ink);
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  margin: 0 0 0.9rem;
+  padding: 0;
+}
+
+.cv-resume .cv-education {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.cv-resume .cv-education__item,
+.cv-resume .cv-project,
+.cv-resume .cv-experience {
+  background: var(--cv-surface);
+  border: 1px solid var(--cv-line);
+  border-radius: 12px;
+}
+
+.cv-resume .cv-education__item {
+  align-items: baseline;
+  display: grid;
+  gap: 0.18rem 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 0.8rem 1rem;
+}
+
+.cv-resume .cv-education__school,
+.cv-resume .cv-project__title,
+.cv-resume .cv-experience__role {
+  color: var(--cv-ink);
+  font-weight: 700;
+}
+
+.cv-resume .cv-education__degree,
+.cv-resume .cv-education__date,
+.cv-resume .cv-project__meta,
+.cv-resume .cv-experience__date {
+  color: var(--cv-muted);
+  font-size: 0.86rem;
+}
+
+.cv-resume .cv-education__degree {
+  grid-column: 1 / -1;
+}
+
+.cv-resume .cv-projects,
+.cv-resume .cv-experiences {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cv-resume .cv-project {
+  padding: 1rem 1.1rem;
+}
+
+.cv-resume .cv-project__top,
+.cv-resume .cv-experience__top {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  justify-content: space-between;
+}
+
+.cv-resume .cv-project__title {
+  font-size: 1.02rem;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.cv-resume .cv-project__meta {
+  margin: 0.35rem 0 0;
+}
+
+.cv-resume .cv-project__desc,
+.cv-resume .cv-experience__desc {
+  color: #4b5563;
+  font-size: 0.92rem;
+  line-height: 1.68;
+  margin: 0.65rem 0 0;
+}
+
+.cv-resume .cv-experience {
+  border-radius: 0;
+  border-width: 0 0 1px;
+  padding: 0.85rem 0.15rem;
+}
+
+.cv-resume .cv-experience:first-child {
+  border-top: 1px solid var(--cv-line);
+}
+
+.cv-resume .cv-experience__role {
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.cv-resume .cv-experience__date {
+  white-space: nowrap;
+}
+
+.cv-resume .cv-skills {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-resume .cv-skill {
+  background: var(--cv-surface);
+  border: 1px solid var(--cv-line);
+  border-radius: 10px;
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+}
+
+.cv-resume .cv-skill::before {
+  content: none;
+}
+
+.cv-resume .cv-skill strong {
+  color: var(--cv-ink);
+}
+
+@media (max-width: 40em) {
+  .cv-resume .cv-education__item {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-resume .cv-education__degree {
+    grid-column: auto;
+  }
+
+  .cv-resume .cv-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-resume .cv-project,
+  .cv-resume .cv-hero {
+    padding: 0.95rem 1rem;
   }
 }
