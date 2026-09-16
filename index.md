@@ -273,3 +273,33 @@ author_profile: false
   background:linear-gradient(145deg,#9bcfda 0%,#b6ddd1 46%,#f1c897 100%) !important;
 }
 </style>
+
+<style>
+/* True scroll-driven continuous colour interpolation. */
+@property --xz-page-color {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#f3cb86;
+}
+@keyframes xz-page-color-flow {
+  0%   { --xz-page-color:#f3cb86; }
+  14%  { --xz-page-color:#b9dba4; }
+  29%  { --xz-page-color:#efb8ba; }
+  45%  { --xz-page-color:#b8d9e8; }
+  61%  { --xz-page-color:#f0d49c; }
+  78%  { --xz-page-color:#e9b8bd; }
+  90%  { --xz-page-color:#9bcfda; }
+  100% { --xz-page-color:#b6ddd1; }
+}
+.xz-home {
+  animation:xz-page-color-flow linear both;
+  animation-timeline:scroll(root block);
+  background:var(--xz-page-color) !important;
+}
+.xz-hero,.xz-statement,.xz-work,.xz-study,.xz-skills,.xz-interests,.xz-end {
+  background:transparent !important;
+}
+@supports not (animation-timeline:scroll()) {
+  .xz-home { background:linear-gradient(180deg,#f3cb86 0%,#b9dba4 14%,#efb8ba 29%,#b8d9e8 45%,#f0d49c 61%,#e9b8bd 78%,#9bcfda 90%,#b6ddd1 100%) !important; }
+}
+</style>
