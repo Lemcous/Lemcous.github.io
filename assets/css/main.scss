@@ -901,3 +901,53 @@ body {
     padding: 0.95rem 1rem;
   }
 }
+
+
+/* Final type scale for the CV: independent of the theme's large root font size. */
+.page__title {
+  font-size: clamp(2rem, 3vw, 2.15rem);
+  margin-bottom: 1rem;
+}
+
+.page__content {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cv-resume {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.cv-resume .cv-hero__name {
+  font-size: 18px;
+}
+
+.cv-resume .cv-hero__meta,
+.cv-resume .cv-education__date,
+.cv-resume .cv-education__degree,
+.cv-resume .cv-project__meta,
+.cv-resume .cv-experience__date {
+  font-size: 14px;
+}
+
+.cv-resume .cv-section__title {
+  font-size: 21px;
+}
+
+.cv-resume .cv-education__school,
+.cv-resume .cv-project__title,
+.cv-resume .cv-experience__role {
+  font-size: 16px;
+}
+
+.cv-resume .cv-project__desc,
+.cv-resume .cv-experience__desc {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.cv-resume .cv-skill {
+  font-size: 14px;
+  line-height: 1.55;
+}
