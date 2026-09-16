@@ -9,10 +9,10 @@ author_profile: true
 
 .about-vibe {
   --ink: #1d1d1f;
-  --peach: #f4d9ca;
-  --lavender: #c9c4ed;
-  --violet: #6156ad;
-  --paper: rgba(255, 253, 249, .82);
+  --mist-green: #e5f2ed;
+  --mist-blue: #eaf4f8;
+  --accent: #4f7f82;
+  --paper: rgba(255, 255, 255, .72);
   color: var(--ink);
   font-size: 16px;
   margin-top: -.3rem;
@@ -24,7 +24,7 @@ author_profile: true
   background:
     radial-gradient(circle at 80% 18%, rgba(255,255,255,.52) 0 1px, transparent 2px),
     radial-gradient(circle at 16% 77%, rgba(255,255,255,.42) 0 1px, transparent 2px),
-    linear-gradient(135deg, #f6e0d2 0%, var(--peach) 52%, #efd0c2 100%);
+    linear-gradient(135deg, #e7f3ee 0%, #eaf4f8 52%, #dfeef0 100%);
   border-radius: 28px;
   overflow: hidden;
   padding: clamp(1rem, 2.8vw, 2rem);
@@ -106,7 +106,7 @@ author_profile: true
 
 .av-eyebrow {
   align-items: center;
-  color: #655d61;
+  color: #557075;
   display: flex;
   font-size: 11px;
   font-weight: 800;
@@ -114,7 +114,7 @@ author_profile: true
   letter-spacing: .1em;
   margin: 0 0 1rem;
 }
-.av-eyebrow::before { background: #66b696; border-radius: 50%; content: ""; height: .42rem; width: .42rem; }
+.av-eyebrow::before { background: #67a99d; border-radius: 50%; content: ""; height: .42rem; width: .42rem; }
 
 .av-name {
   font-size: clamp(3.1rem, 6.8vw, 6rem);
@@ -126,7 +126,7 @@ author_profile: true
 .av-name span { display: block; }
 
 .av-role {
-  color: var(--violet);
+  color: var(--accent);
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 700;
   letter-spacing: -.04em;
@@ -134,7 +134,7 @@ author_profile: true
 }
 
 .av-intro {
-  color: #514a50;
+  color: #4f6267;
   font-size: 14px;
   line-height: 1.8;
   margin: 0;
@@ -146,7 +146,7 @@ author_profile: true
   background: rgba(255,255,255,.62);
   border: 1px solid rgba(255,255,255,.76);
   border-radius: 999px;
-  color: #4d464c;
+  color: #4d6568;
   font-size: 12px;
   padding: .38rem .7rem;
 }
@@ -166,7 +166,7 @@ author_profile: true
 
 .av-portrait-zone { min-height: 27rem; position: relative; }
 .av-portrait-backdrop {
-  background: linear-gradient(145deg, #9e95dc, #776ebf);
+  background: linear-gradient(145deg, #b7dcd6, #9fcad1);
   border-radius: 44% 56% 43% 57% / 43% 47% 53% 57%;
   height: min(27rem, 47vw);
   left: 50%;
@@ -188,7 +188,7 @@ author_profile: true
 }
 .av-portrait {
   bottom: 0;
-  filter: drop-shadow(0 16px 18px rgba(39,31,81,.25));
+  filter: drop-shadow(0 16px 18px rgba(63, 103, 106, .18));
   height: 92%;
   left: 50%;
   object-fit: cover;
@@ -203,7 +203,7 @@ author_profile: true
   border-radius: 14px;
   bottom: 1.2rem;
   box-shadow: 0 10px 20px rgba(65,49,54,.1);
-  color: #4e4650;
+  color: #4d6568;
   font-size: 12px;
   line-height: 1.45;
   padding: .65rem .75rem;
