@@ -5,109 +5,278 @@ author_profile: true
 ---
 
 <style>
-.home-modules { margin-top: 2rem; }
-.home-modules h2 { border-bottom: 1px solid #e5e5e7; margin: 2.8rem 0 1.2rem; padding-bottom: .7rem; }
-.module-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.module-card {
-  background: #f7f7f8;
-  border: 1px solid #e8e8eb;
+.about-vibe {
+  --av-ink: #172033;
+  --av-muted: #61708a;
+  --av-blue: #3d6df2;
+  --av-sky: #eaf1ff;
+  --av-line: #dbe4f5;
+  color: var(--av-ink);
+  font-size: 16px;
+}
+
+.about-vibe p { max-width: none; }
+
+.about-vibe .av-hero {
+  background: linear-gradient(135deg, #e8f0ff 0%, #f7faff 48%, #e7fbf7 100%);
+  border: 1px solid #d9e6ff;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3.1rem);
+  position: relative;
+}
+
+.about-vibe .av-hero::after {
+  background: rgba(61, 109, 242, .1);
+  border-radius: 50%;
+  content: "";
+  height: 13rem;
+  position: absolute;
+  right: -4rem;
+  top: -5rem;
+  width: 13rem;
+}
+
+.about-vibe .av-eyebrow,
+.about-vibe .av-label {
+  color: var(--av-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin: 0 0 .7rem;
+  text-transform: uppercase;
+}
+
+.about-vibe .av-name {
+  font-size: clamp(2.3rem, 6vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.about-vibe .av-tagline {
+  color: #34415a;
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  line-height: 1.75;
+  margin: 1rem 0 0;
+  max-width: 34rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-vibe .av-status {
+  align-items: center;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 999px;
+  color: #43516c;
+  display: inline-flex;
+  font-size: 14px;
+  gap: .5rem;
+  margin-top: 1.35rem;
+  padding: .48rem .85rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-vibe .av-dot {
+  background: #1aa77a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(26,167,122,.12);
+  height: .5rem;
+  width: .5rem;
+}
+
+.about-vibe .av-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-vibe .av-button {
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: .62rem 1rem;
+  text-decoration: none;
+}
+
+.about-vibe .av-button--primary {
+  background: var(--av-ink);
+  color: #fff;
+}
+
+.about-vibe .av-button--secondary {
+  background: rgba(255,255,255,.66);
+  border: 1px solid #d1ddf5;
+  color: var(--av-ink);
+}
+
+.about-vibe .av-section {
+  margin-top: 2.25rem;
+}
+
+.about-vibe .av-section__head {
+  align-items: baseline;
+  display: flex;
+  gap: .75rem;
+  justify-content: space-between;
+  margin-bottom: .85rem;
+}
+
+.about-vibe .av-section__title {
+  border: 0;
+  font-size: 21px;
+  letter-spacing: -.035em;
+  margin: 0;
+  padding: 0;
+}
+
+.about-vibe .av-section__note {
+  color: var(--av-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.about-vibe .av-grid {
+  display: grid;
+  gap: .85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-vibe .av-card {
+  background: #fff;
+  border: 1px solid var(--av-line);
   border-radius: 16px;
-  min-height: 158px;
-  padding: 1.35rem 1.45rem;
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  min-height: 11rem;
+  padding: 1.1rem;
 }
-.module-card:hover { border-color: #d0d0d5; box-shadow: 0 8px 22px rgba(0, 0, 0, .06); transform: translateY(-2px); }
-.module-card__label { color: #6e6e73; font-size: .76rem; font-weight: 700; letter-spacing: .08em; margin: 0 0 .55rem; text-transform: uppercase; }
-.module-card h3 { font-size: 1.16rem; line-height: 1.35; margin: 0 0 .45rem; }
-.module-card p { color: #515154; font-size: .95rem; line-height: 1.6; margin: 0; }
-.module-card--education { background: #fff; min-height: 125px; }
-.module-card--project { background: #fff; min-height: 210px; }
-.module-card--project h3 { color: #1d1d1f; font-size: 1.25rem; }
-.module-card__meta { color: #6e6e73; font-size: .84rem; margin-bottom: .75rem !important; }
-.module-focus { background: #f1f7ff; border-left: 3px solid #0071e3; border-radius: 0 12px 12px 0; color: #424245; line-height: 1.7; padding: 1rem 1.2rem; }
-@media (max-width: 680px) {
-  .module-grid { grid-template-columns: 1fr; }
-  .module-card { min-height: auto; }
+
+.about-vibe .av-card--feature {
+  background: var(--av-ink);
+  border-color: var(--av-ink);
+  color: #fff;
+}
+
+.about-vibe .av-card--feature .av-label,
+.about-vibe .av-card--feature .av-card__text {
+  color: rgba(255,255,255,.7);
+}
+
+.about-vibe .av-card__title {
+  font-size: 17px;
+  letter-spacing: -.025em;
+  line-height: 1.35;
+  margin: 0 0 .6rem;
+}
+
+.about-vibe .av-card__text {
+  color: var(--av-muted);
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.about-vibe .av-timeline {
+  display: grid;
+  gap: .7rem;
+}
+
+.about-vibe .av-timeline__item {
+  align-items: center;
+  border-bottom: 1px solid var(--av-line);
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  padding: .75rem 0;
+}
+
+.about-vibe .av-timeline__date {
+  color: var(--av-blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.about-vibe .av-timeline__main {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.about-vibe .av-timeline__main span {
+  color: var(--av-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 40em) {
+  .about-vibe .av-grid { grid-template-columns: 1fr; }
+  .about-vibe .av-card { min-height: auto; }
+  .about-vibe .av-section__head { align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .about-vibe .av-timeline__item { grid-template-columns: 1fr; gap: .2rem; }
 }
 </style>
 
-我关注数字平台如何影响品牌与消费者之间的沟通，也希望通过研究与实践理解数据、内容和创意如何共同推动有效的营销传播。
+<div class="about-vibe">
 
-[研究与项目](/portfolio/){: .btn .btn--primary }
-[个人简历](/cv/){: .btn .btn--inverse }
+  <section class="av-hero">
+    <p class="av-eyebrow">Hello, I am</p>
+    <h2 class="av-name">徐昕哲</h2>
+    <p class="av-tagline">南京大学新闻传播学院新闻与传播硕士研究生。关注数字平台、内容策略与品牌如何建立更有效的沟通。</p>
+    <div class="av-status"><span class="av-dot"></span>目前在南京 · 持续积累研究与传播实践</div>
+    <div class="av-actions">
+      <a class="av-button av-button--primary" href="/cv/">查看个人简历</a>
+      <a class="av-button av-button--secondary" href="/works/">浏览个人作品集</a>
+    </div>
+  </section>
 
-<div class="home-modules">
+  <section class="av-section">
+    <div class="av-section__head">
+      <h2 class="av-section__title">我关心什么</h2>
+      <p class="av-section__note">Focus areas</p>
+    </div>
+    <div class="av-grid">
+      <article class="av-card av-card--feature">
+        <p class="av-label">01 / Brand</p>
+        <h3 class="av-card__title">数字营销与品牌传播</h3>
+        <p class="av-card__text">从传播目标、内容表达与用户反馈，理解品牌在数字环境中的沟通方式。</p>
+      </article>
+      <article class="av-card">
+        <p class="av-label">02 / Platform</p>
+        <h3 class="av-card__title">社交媒体与平台传播</h3>
+        <p class="av-card__text">关注平台机制、内容形态与互动行为之间的关系。</p>
+      </article>
+      <article class="av-card">
+        <p class="av-label">03 / Audience</p>
+        <h3 class="av-card__title">消费者洞察</h3>
+        <p class="av-card__text">理解用户需求、使用场景与消费决策如何被内容影响。</p>
+      </article>
+    </div>
+  </section>
 
-<h2>研究兴趣</h2>
-
-<div class="module-grid">
-  <article class="module-card">
-    <p class="module-card__label">01 · Brand</p>
-    <h3>数字营销与品牌传播</h3>
-    <p>关注品牌在数字环境中的沟通与连接。</p>
-  </article>
-  <article class="module-card">
-    <p class="module-card__label">02 · Platform</p>
-    <h3>社交媒体与平台传播</h3>
-    <p>探索内容流动、平台机制与用户互动。</p>
-  </article>
-  <article class="module-card">
-    <p class="module-card__label">03 · Audience</p>
-    <h3>消费者洞察与用户互动</h3>
-    <p>理解用户需求、态度与决策过程。</p>
-  </article>
-  <article class="module-card">
-    <p class="module-card__label">04 · Data</p>
-    <h3>数据驱动的内容策略</h3>
-    <p>尝试以数据支持内容优化与传播效果评估。</p>
-  </article>
-</div>
-
-<h2>教育经历</h2>
-
-<div class="module-grid">
-  <article class="module-card module-card--education">
-    <p class="module-card__label">2026 — 至今</p>
-    <h3>南京大学新闻传播学院</h3>
-    <p>新闻与传播硕士研究生</p>
-  </article>
-  <article class="module-card module-card--education">
-    <p class="module-card__label">2022 — 2026</p>
-    <h3>南京师范大学新闻传播学院</h3>
-    <p>广告学本科生</p>
-  </article>
-</div>
-
-<h2>课程与研究项目</h2>
-
-<div class="module-grid">
-  <article class="module-card module-card--project">
-    <p class="module-card__label">Course Project 01</p>
-    <h3>社交媒体品牌传播分析</h3>
-    <p class="module-card__meta">课程研究｜内容分析</p>
-    <p>以某消费品牌为案例，梳理社交媒体内容策略、用户互动方式与传播效果，并尝试提出优化建议。</p>
-  </article>
-  <article class="module-card module-card--project">
-    <p class="module-card__label">Course Project 02</p>
-    <h3>数字平台用户洞察</h3>
-    <p class="module-card__meta">课程研究｜用户研究</p>
-    <p>结合公开资料、问卷或访谈材料，分析目标用户的内容偏好与消费决策过程。</p>
-  </article>
-</div>
-
-<h2>当前目标</h2>
-
-<div class="module-focus">
-  正在系统学习数字营销传播相关理论与方法，并持续积累研究设计、内容分析和数据分析方面的实践经验。
-</div>
+  <section class="av-section">
+    <div class="av-section__head">
+      <h2 class="av-section__title">现在在做什么</h2>
+      <p class="av-section__note">Now</p>
+    </div>
+    <div class="av-timeline">
+      <div class="av-timeline__item">
+        <div class="av-timeline__date">2026 — 至今</div>
+        <div class="av-timeline__main">南京大学新闻传播学院 <span>· 新闻与传播硕士研究生，数字营销传播方向</span></div>
+      </div>
+      <div class="av-timeline__item">
+        <div class="av-timeline__date">研究训练</div>
+        <div class="av-timeline__main">用户研究与内容分析 <span>· 问卷、访谈、SPSS 数据处理与研究汇报</span></div>
+      </div>
+      <div class="av-timeline__item">
+        <div class="av-timeline__date">实践积累</div>
+        <div class="av-timeline__main">传播与运营 <span>· 内容策划、项目协作、活动影像记录</span></div>
+      </div>
+    </div>
+  </section>
 
 </div>
-
-> 本个人网站用于计算传播学导论课程作业展示。欢迎通过侧栏中的邮箱与我联系。
-
-
-<style>
-.home-modules .module-card { background: linear-gradient(145deg, #ffffff 0%, #f5f5f7 100%); border-color: rgba(0, 0, 0, .06); box-shadow: 0 1px 1px rgba(0, 0, 0, .03), 0 10px 24px rgba(0, 0, 0, .08), inset 0 1px 0 rgba(255, 255, 255, .9); }
-.home-modules .module-card--education, .home-modules .module-card--project { background: #fff; }
-.home-modules .module-card:hover { box-shadow: 0 2px 3px rgba(0, 0, 0, .04), 0 16px 32px rgba(0, 0, 0, .12), inset 0 1px 0 rgba(255, 255, 255, .9); transform: translateY(-3px); }
-</style>
