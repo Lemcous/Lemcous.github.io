@@ -5,6 +5,18 @@ permalink: /cv/
 author_profile: true
 ---
 
+<style>
+.page__title { font-size: clamp(2rem, 3vw, 2.15rem) !important; line-height: 1.15 !important; margin-bottom: 1rem !important; }
+.page__content { font-size: 16px !important; line-height: 1.7 !important; }
+.cv-resume { font-size: 16px !important; line-height: 1.65 !important; }
+.cv-resume .cv-hero__name { font-size: 18px !important; }
+.cv-resume .cv-hero__meta, .cv-resume .cv-education__date, .cv-resume .cv-education__degree, .cv-resume .cv-project__meta, .cv-resume .cv-experience__date { font-size: 14px !important; }
+.cv-resume .cv-section__title { font-size: 21px !important; }
+.cv-resume .cv-education__school, .cv-resume .cv-project__title, .cv-resume .cv-experience__role { font-size: 16px !important; }
+.cv-resume .cv-project__desc, .cv-resume .cv-experience__desc { font-size: 15px !important; line-height: 1.65 !important; }
+.cv-resume .cv-skill { font-size: 14px !important; line-height: 1.55 !important; }
+</style>
+
 <div class="cv-resume">
 
   <div class="cv-hero">
