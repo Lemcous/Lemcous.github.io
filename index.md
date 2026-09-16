@@ -238,3 +238,46 @@ author_profile: false
 <script>
 document.querySelector('.hp-shell')?.classList.add('is-visible');
 </script>
+
+<style>
+/* Match the reference template's full-bleed canvas on the homepage only. */
+.masthead { display: none; }
+#main { margin-top: 1rem !important; max-width: 1280px; }
+#main .page {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 !important;
+}
+.hp-shell {
+  border-radius: 0;
+  border: 0;
+  min-height: 100vh;
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+.hp-hero {
+  gap: clamp(1.4rem, 4vw, 3.8rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(15rem, .65fr);
+  max-width: 72rem;
+  min-height: 34rem;
+}
+.hp-photo-zone { min-height: 25rem; }
+.hp-photo-card {
+  height: min(25rem, 42vw);
+  left: 42%;
+  transform: translate(-50%, -50%) rotate(1deg);
+  width: min(18rem, 82%);
+}
+.hp-note { bottom: 1.3rem; right: .4rem; }
+.hp-meta, .hp-work { max-width: 72rem; }
+
+@media (max-width: 52em) {
+  .masthead { display: block; }
+  #main { margin-top: 1.2rem !important; }
+  #main .page { padding: 0 !important; }
+  .hp-shell { border-radius: 22px; min-height: auto; }
+  .hp-photo-card { height: 24rem; left: 50%; width: min(18rem, 80%); }
+}
+</style>
+
