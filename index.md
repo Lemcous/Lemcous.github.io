@@ -247,3 +247,29 @@ author_profile: false
   update();
 })();
 </script>
+
+<style>
+/* Reliable CSS-only colour journey: each chapter has a visible colour, with matching edge colours. */
+.xz-home { background:none !important; }
+.xz-hero {
+  background:linear-gradient(145deg,#f3cb86 0%,#f4d9a6 48%,#d2e6ba 100%) !important;
+}
+.xz-statement {
+  background:linear-gradient(145deg,#d2e6ba 0%,#b9dba4 48%,#93c6a4 100%) !important;
+}
+.xz-work {
+  background:linear-gradient(145deg,#93c6a4 0%,#d2d99d 44%,#efb8ba 100%) !important;
+}
+.xz-study {
+  background:linear-gradient(145deg,#efb8ba 0%,#dfc1c6 45%,#b8d9e8 100%) !important;
+}
+.xz-skills {
+  background:linear-gradient(145deg,#b8d9e8 0%,#c7e1d3 46%,#f0d49c 100%) !important;
+}
+.xz-interests {
+  background:linear-gradient(145deg,#f0d49c 0%,#e9b8bd 48%,#9bcfda 100%) !important;
+}
+.xz-end {
+  background:linear-gradient(145deg,#9bcfda 0%,#b6ddd1 46%,#f1c897 100%) !important;
+}
+</style>
