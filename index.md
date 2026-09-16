@@ -161,7 +161,7 @@ author_profile: false
     radial-gradient(ellipse at 16% 13%, color-mix(in srgb, var(--theme-glow) 88%, white) 0%, transparent 42%),
     radial-gradient(ellipse at 88% 82%, color-mix(in srgb, var(--theme-b) 62%, transparent) 0%, transparent 48%),
     linear-gradient(135deg, var(--theme-a) 0%, var(--theme-glow) 51%, var(--theme-b) 100%) !important;
-  transition: background 1.25s cubic-bezier(.22,1,.36,1);
+  transition: background .48s cubic-bezier(.22,1,.36,1);
 }
 </style>
 <script>
@@ -169,13 +169,13 @@ author_profile: false
   const home = document.querySelector('.xz-home');
   if (!home) return;
   const palette = [
-    [[240,220,183],[248,226,208],[224,238,213]],  // warm yellow / first page
-    [[218,235,205],[228,241,217],[196,222,201]],  // green / statement
-    [[239,208,210],[245,220,195],[232,226,184]],  // pink-apricot / work
-    [[213,228,238],[222,238,221],[203,224,218]],  // blue-green / study
-    [[244,231,199],[239,225,210],[218,238,226]],  // cream / abilities
-    [[208,231,234],[220,237,216],[236,210,208]],  // blue-pink / interests
-    [[220,238,232],[214,231,241],[243,222,211]]   // aqua-blue / ending
+    [[237,205,139],[249,218,190],[215,233,180]],  // warm yellow / first page
+    [[186,219,181],[215,238,192],[144,194,170]],  // green / statement
+    [[235,178,187],[247,202,166],[232,211,143]],  // pink-apricot / work
+    [[170,208,228],[197,230,207],[151,202,190]],  // blue-green / study
+    [[241,210,151],[244,218,178],[183,224,204]],  // cream / abilities
+    [[160,214,221],[194,225,179],[239,180,183]],  // blue-pink / interests
+    [[178,224,212],[174,211,234],[244,192,178]]   // aqua-blue / ending
   ];
   const mix = (a,b,t) => a.map((v,i) => Math.round(v + (b[i]-v)*t));
   const rgb = v => 'rgb(' + v.join(',') + ')';
