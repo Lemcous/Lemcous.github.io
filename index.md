@@ -219,6 +219,55 @@ author_profile: true
   .about-vibe .av-section__head { align-items: flex-start; flex-direction: column; gap: .3rem; }
   .about-vibe .av-timeline__item { grid-template-columns: 1fr; gap: .2rem; }
 }
+
+.about-vibe .av-hero,
+.about-vibe .av-section {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.about-vibe .av-hero.is-visible,
+.about-vibe .av-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-vibe .av-section:nth-of-type(2) { transition-delay: .08s; }
+.about-vibe .av-section:nth-of-type(3) { transition-delay: .14s; }
+
+.about-vibe .av-card,
+.about-vibe .av-button,
+.about-vibe .av-timeline__item {
+  transition: transform .28s cubic-bezier(.22, 1, .36, 1), box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
+}
+
+.about-vibe .av-card:hover {
+  border-color: #b7c9ee;
+  box-shadow: 0 14px 28px rgba(52, 79, 135, .11);
+  transform: translateY(-4px);
+}
+
+.about-vibe .av-button:hover {
+  transform: translateY(-2px);
+}
+
+.about-vibe .av-timeline__item:hover {
+  border-color: #b7c9ee;
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-vibe .av-hero,
+  .about-vibe .av-section,
+  .about-vibe .av-card,
+  .about-vibe .av-button,
+  .about-vibe .av-timeline__item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 </style>
 
 <div class="about-vibe">
@@ -280,3 +329,22 @@ author_profile: true
   </section>
 
 </div>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.about-vibe .av-hero, .about-vibe .av-section');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function (item) { item.classList.add('is-visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(function (item) { observer.observe(item); });
+}());
+</script>
