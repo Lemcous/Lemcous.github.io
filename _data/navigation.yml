@@ -3,8 +3,8 @@ main:
   - title: "关于我"
     url: /
 
-  - title: "研究与项目"
-    url: /portfolio/
-
   - title: "个人简历"
     url: /cv/
+
+  - title: "个人作品集"
+    url: /works/
