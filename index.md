@@ -112,3 +112,39 @@ author_profile: false
 <script>
 (() => { const observer = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); }), {threshold:.16}); document.querySelectorAll('.xz-reveal').forEach(el => observer.observe(el)); })();
 </script>
+
+<style>
+/* One continuous multicolour canvas: changes smoothly instead of switching per section. */
+.xz-home {
+  --flow-x: 0%;
+  --flow-y: 0%;
+  background:
+    radial-gradient(ellipse at calc(8% + var(--flow-x)) calc(12% + var(--flow-y)), rgba(245,201,203,.62) 0%, transparent 34%),
+    radial-gradient(ellipse at calc(86% - var(--flow-x)) calc(20% + var(--flow-y)), rgba(239,216,165,.58) 0%, transparent 35%),
+    radial-gradient(ellipse at calc(72% + var(--flow-x)) calc(82% - var(--flow-y)), rgba(178,219,207,.58) 0%, transparent 38%),
+    radial-gradient(ellipse at calc(18% - var(--flow-x)) calc(76% - var(--flow-y)), rgba(181,213,231,.55) 0%, transparent 37%),
+    #edf0df;
+  background-attachment: fixed;
+  background-size: 145% 145%;
+  transition: background-position 1.1s cubic-bezier(.22,1,.36,1);
+}
+.xz-hero,.xz-statement,.xz-work,.xz-study,.xz-skills,.xz-interests,.xz-end { background:transparent; }
+.xz-section::before { background:rgba(255,255,255,.08); content:""; inset:0; pointer-events:none; position:absolute; }
+.xz-section > .xz-inner { position:relative; z-index:1; }
+</style>
+<script>
+(() => {
+  const home = document.querySelector('.xz-home');
+  if (!home) return;
+  let ticking = false;
+  const updateFlow = () => {
+    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    const p = scrollY / max;
+    home.style.setProperty('--flow-x', (p * 16) + '%');
+    home.style.setProperty('--flow-y', (Math.sin(p * Math.PI) * 12) + '%');
+    ticking = false;
+  };
+  addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(updateFlow); ticking = true; } }, {passive:true});
+  updateFlow();
+})();
+</script>
