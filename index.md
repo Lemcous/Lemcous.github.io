@@ -200,3 +200,50 @@ author_profile: false
 .xz-nav { justify-content:flex-start; max-width:70rem; padding:.43rem .55rem; }
 .xz-nav__links { justify-content:flex-start; }
 </style>
+
+<style>
+/* Pure page-background gradient: no colour spots, only themed background colours. */
+.xz-home {
+  background:linear-gradient(135deg, var(--theme-a) 0%, var(--theme-glow) 48%, var(--theme-b) 100%) !important;
+  background-attachment:fixed !important;
+  background-size:100% 100% !important;
+  transition:background .42s cubic-bezier(.22,1,.36,1) !important;
+}
+.xz-section::before { display:none; }
+</style>
+<script>
+(() => {
+  const home = document.querySelector('.xz-home');
+  const sections = [...document.querySelectorAll('.xz-section')];
+  if (!home || !sections.length) return;
+  /* hero, statement, work, study, skills, interests, ending */
+  const themes = [
+    [[242,207,132],[250,224,183],[238,190,165]], // 黄 / 杏
+    [[167,213,172],[207,232,180],[139,190,158]], // 绿
+    [[237,169,183],[246,197,165],[230,195,129]], // 粉 / 杏
+    [[150,201,229],[188,222,218],[130,183,177]], // 蓝绿
+    [[239,203,130],[247,222,171],[183,220,193]], // 奶油黄
+    [[140,206,218],[184,221,171],[235,164,176]], // 蓝 / 粉
+    [[165,220,207],[162,205,233],[239,180,157]]  // 青 / 淡橙
+  ];
+  const mix=(a,b,t)=>a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+  const css=v=>'rgb('+v.join(',')+')';
+  let raf=false;
+  const update=()=>{
+    const marker=scrollY+innerHeight*.48;
+    const starts=sections.map(el=>el.offsetTop);
+    let i=starts.findIndex((p,n)=>n<starts.length-1 && marker>=p && marker<starts[n+1]);
+    if(i<0) i=marker<starts[0]?0:starts.length-1;
+    const next=Math.min(i+1,themes.length-1);
+    const span=Math.max(1,(starts[next]||starts[i])-starts[i]);
+    const t=next===i?0:Math.max(0,Math.min(1,(marker-starts[i])/span));
+    home.style.setProperty('--theme-a',css(mix(themes[i][0],themes[next][0],t)));
+    home.style.setProperty('--theme-glow',css(mix(themes[i][1],themes[next][1],t)));
+    home.style.setProperty('--theme-b',css(mix(themes[i][2],themes[next][2],t)));
+    raf=false;
+  };
+  addEventListener('scroll',()=>{if(!raf){raf=true;requestAnimationFrame(update)}},{passive:true});
+  addEventListener('resize',update,{passive:true});
+  update();
+})();
+</script>
