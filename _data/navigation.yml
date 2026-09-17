@@ -8,3 +8,6 @@ main:
 
   - title: "个人作品集"
     url: /works/
+
+  - title: "更新说明"
+    url: /update-guide/
