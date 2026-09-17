@@ -90,7 +90,7 @@ author_profile: false
 </style>
 
 <div class="xz-home">
-  <nav class="xz-nav" aria-label="主导航"><div class="xz-nav__links"><a href="#about">关于我</a><a href="/cv/">个人简历</a><a href="/works/">作品集</a></div></nav>
+  <nav class="xz-nav" aria-label="主导航"><div class="xz-nav__links"><a href="#about">关于我</a><a href="/cv/">个人简历</a><a href="/works/">作品集</a><a href="/update-guide/">更新说明</a></div></nav>
 
   <section class="xz-section xz-hero" id="about"><div class="xz-inner xz-hero__grid xz-reveal">
     <div><p class="xz-eyebrow">HELLO / 你好</p><h1 class="xz-title">Hi,<br>我是徐昕哲</h1><p class="xz-role">Digital Marketing / 数字营销传播</p><p class="xz-copy">南京大学新闻传播学院新闻与传播硕士研究生。</p><div class="xz-pills"><span class="xz-pill">品牌传播</span><span class="xz-pill">用户洞察</span><span class="xz-pill">内容策略</span></div><a class="xz-button" href="/cv/">了解我的经历</a></div>
