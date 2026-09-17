@@ -1,13 +1,7 @@
-# 网站顶部导航栏
 main:
   - title: "关于我"
     url: /
-
-  - title: "个人简历"
-    url: /cv/
-
   - title: "个人作品集"
     url: /works/
-
   - title: "更新说明"
     url: /update-guide/
