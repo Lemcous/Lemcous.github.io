@@ -26,8 +26,8 @@ author_profile: false
 .xz-hero { background:radial-gradient(circle at 78% 28%,rgba(255,255,255,.62),transparent 18rem),linear-gradient(130deg,#efd7d0 0%,#f3dfc8 43%,#e5e7c9 72%,#d8eaec 100%); }
 .xz-hero__grid { align-items:center; display:grid; gap:clamp(1rem,5vw,5rem); grid-template-columns:1.25fr .75fr; }
 .xz-eyebrow { color:#6d9a91; font-size:11px; font-weight:800; letter-spacing:.12em; margin:0 0 1rem; }
-.xz-title { font-size:clamp(2.6rem,5.4vw,5.4rem); font-weight:900; letter-spacing:-.09em; line-height:.92; margin:0; white-space:nowrap; }
-.xz-role { color:#54777c; font-size:clamp(1rem,1.7vw,1.25rem); font-weight:700; margin:1.1rem 0 .75rem; }
+.xz-title { font-size:clamp(2.6rem,5.4vw,5.4rem); font-weight:900; letter-spacing:-.09em; line-height:1.2; margin:0; white-space:nowrap; }
+.xz-role { color:#54777c; font-size:clamp(1rem,1.7vw,1.25rem); font-weight:700; line-height:1.6; margin:1.6rem 0 .75rem; }
 .xz-copy { color:#587075; font-size:14px; line-height:1.8; margin:0; max-width:31rem; }
 .xz-pills { display:flex; flex-wrap:wrap; gap:.5rem; margin:1.25rem 0; }
 .xz-pill { background:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.88); border-radius:99px; color:#516c70; font-size:12px; padding:.38rem .7rem; }
